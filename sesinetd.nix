@@ -10,18 +10,18 @@ buildFHSEnv rec {
   ];
 
   extraBwrapArgs = [
-    "--bind $1 /usr/lib/sesi"
+    "--bind $1 /usr/lib64/sesi"
   ];
 
   extraBuildCommands = ''
     # we need to write extra dir to usr/lib
     # but it's write protected,
     # so we stash permissions, modify, then restore
-    perms=$(stat -c %a usr/lib)
-    chmod u+w usr/lib
-    mkdir usr/lib/sesi
+    perms=$(stat -c %a $out/usr/lib64)
+    chmod u+w $out/usr/lib64
+    mkdir $out/usr/lib64/sesi
 
-    chmod $perms usr/lib
+    chmod $perms $out/usr/lib64
   '';
 
   runScript = writeScript "${name}-sesinetd" ''
