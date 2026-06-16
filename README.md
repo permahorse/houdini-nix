@@ -80,4 +80,5 @@ currently this flake provides onlt the following versions:
 * 20.5.522
 * 20.5.550
 * 20.5.613
-
+* 20.5.684
+* 21.0.440
