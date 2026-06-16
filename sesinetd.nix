@@ -1,4 +1,4 @@
-{callPackage, writeScript, buildFHSEnv, unwrapped ? callPackage ./runtime.nix {}}:
+{callPackage, writeScript, buildFHSEnv, unwrapped ? callPackage ./runtime.nix {}, ...}:
 buildFHSEnv rec {
   name = "houdini-sesinetd-${unwrapped.version}";
 
